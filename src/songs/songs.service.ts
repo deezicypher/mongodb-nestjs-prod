@@ -15,4 +15,13 @@ export class SongsService {
         const song = await this.songModel.create(createSongDto)
         return song
     }
+
+    find(): Promise<Song[]>{
+        return this.songModel.find()
+    }
+
+    findById(id:string):Promise<Song | null>{
+        return this.songModel.findById(id)
+    }
+
 }
