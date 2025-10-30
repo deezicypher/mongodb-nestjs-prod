@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Song, SongDocument } from './schemas/song';
-import { Model } from 'mongoose';
+import { DeleteResult, Model } from 'mongoose';
 import { CreateSongDTO } from './dto/create-song-dto';
 
 @Injectable()
@@ -24,4 +24,7 @@ export class SongsService {
         return this.songModel.findById(id)
     }
 
+    deleteById(id:string):Promise<DeleteResult>{
+        return this.songModel.deleteOne({_id:id}).exec()
+    }
 }
