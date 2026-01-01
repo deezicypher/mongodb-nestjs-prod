@@ -1,0 +1,33 @@
+POST http://localhost:3001/songs
+Content-Type: application/json
+
+{
+"title": "Lasting Lover2",
+"releasedDate" : "2023-06-11",
+"duration" :"02:35",
+"lyrics": "I don't know why I can't quite get you out my sight You're always just behind. x2"
+}
+
+### Get songs
+GET http://localhost:3001/songs
+
+
+### Find song
+GET http://localhost:3001/songs/69024de028055e55bbbac167
+
+### Delete song
+DELETE  http://localhost:3001/songs/690394a160c7f87e3cd3c098
+
+
+### Create Album
+POST http://localhost:3001/albums
+Content-Type: application/json
+
+{
+"title": "Happy",
+"songs":["6903d9a685195bfef5a0954a","6903d9bf85195bfef5a0954c"]
+}
+
+
+### Find Albums
+GET http://localhost:3001/albums
